@@ -14,16 +14,18 @@ int main()
 
 //in idnumber header file
 #include <iostream>
-#include "idnumber.h"
 #include "people.h"
+#include<string>
+#include "idnumber.h"
+
 using namespace std;
-
-int main()
+people::people(string n, idnumber id)
+:name(n),Id(id)
 {
-    idnumber firstId(2345);
-
-    people Emp1("Anuj Laddha", firstId);
-    Emp1.printdata();
+}
+void people::printdata(){
+    cout << name << " has an id number : " ;
+    Id.printIdNum();
 }
 
 
