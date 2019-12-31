@@ -10,8 +10,8 @@ int main(void){
     Birthday birthObj(12,12,1998);
     //birthObj.printDate();
 
-    people buckyRoberts("bucky" , birthObj);
-    buckyRoberts.printSomethingOut();
+    people Anmol("annu" , birthObj);
+    Anmol.printSomethingOut();
 }
  
   
