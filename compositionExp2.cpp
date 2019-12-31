@@ -8,7 +8,7 @@ int main()
 {
     idnumber firstId(2345);
 
-    people Emp1("Anuj Laddha", firstId);
+    people Emp1("SayGh", firstId);
     Emp1.printdata();
 }
 
