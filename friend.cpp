@@ -12,7 +12,7 @@ friend void AvengersEnemy(Avengers obj);
 };
 
 void AvengersEnemy(Avengers obj){
-  Avengers Endgame
+  Avengers Endgame;
   Endgame.IronMan = 3000;
   cout << Endgame.IronMan << endl;
 }
