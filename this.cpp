@@ -5,7 +5,7 @@ include "tanya.h"
 
 using namespace std;
 int main(){
-  tanya ob1;
+  tanya ob1(23);
   ob1.print()
 }
 
