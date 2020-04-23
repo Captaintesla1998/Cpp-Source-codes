@@ -45,3 +45,38 @@ int equalStacks(vector<int> h1, vector<int> h2, vector<int> h3) {
      }
 
 }
+
+
+/*
+PROBLEM 2 - GAME OF 2 STACKS
+8/14 TEST CASES PASSED
+6/14 TEST CASES FAILED
+*/
+int twoStacks(int x, vector<int> a, vector<int> b) {
+    /*
+     * Write your code here.
+     */
+    int count=0, i=0, j=0, sum=0;
+    while(i<a.size() && sum+a[i]<=x){
+        sum+=a[i];
+        i++;
+    } 
+    count++;
+
+    while(j<b.size() && i>0){
+        sum+=b[j];
+        j++;
+
+        while(sum>x && i>0){
+            i--;
+            sum-=a[i];
+            
+        }
+        if(sum <=x && i+j>count){
+            count = i+j;
+        }
+    }
+    return count;
+     
+
+}
