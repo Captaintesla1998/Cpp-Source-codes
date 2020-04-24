@@ -61,7 +61,7 @@ int twoStacks(int x, vector<int> a, vector<int> b) {
         sum+=a[i];
         i++;
     } 
-    count++;
+    count=i;
 
     while(j<b.size() && i>0){
         sum+=b[j];
