@@ -80,3 +80,37 @@ int twoStacks(int x, vector<int> a, vector<int> b) {
      
 
 }
+
+
+// ---------------------------------------------------------------------------------------------------------
+// Correct Solution for
+// PROBLEM 3: AND xor OR
+int andXorOr(vector<int> a) {
+    /*
+     * Write your code here.
+     */
+    stack<long> s;
+    vector<long> v;
+    s.push(a[0]);
+    for(int i = 1; i < a.size(); i++)
+    {
+        if(s.top() < a[i])
+        {
+            long b = s.top();
+            v.push_back(b^a[i]);
+            s.push(a[i]);
+        }
+        else
+        {
+            while(!s.empty() && s.top() >= a[i])
+            {
+                long b = s.top();
+                s.pop();
+                v.push_back(b^a[i]);
+            }
+            s.push(a[i]);
+        }
+    }
+    return *max_element(v.begin(), v.end());
+}
+// ------------------------------------------------------------------------------------------------------------------
