@@ -182,3 +182,42 @@ string isBalanced(string s) {
 }
 
     
+// -------------------------------------------------------------------------------------------------------------------------
+// Problem 6: Largest rectangle in a histogram
+// Correct solution:
+// Complete the largestRectangle function below.
+long largestRectangle(vector<int> h) {
+    int max_area = 0;
+    stack<int> s1;
+    int area,i=0;
+    s1.push(0);//pushing index of heights array
+    //run through all given bars
+    while(i<h.size()){
+        //if current height is greater than stack top, push it into stack
+        if(s1.empty() || h[i]>h[s1.top()]) s1.push(i++);
+
+        else{
+            int a = s1.top();
+            s1.pop();
+            if (s1.empty()){
+                area = h[a] * i;
+            }
+            else if(!s1.empty()){
+                area =h[a]*(i-s1.top()-1);
+            }
+            if (area>max_area) max_area = area;
+        }
+    }
+    while(!s1.empty()){
+        int a=s1.top();
+        s1.pop();
+        if(s1.empty()){
+            area = h[a] * i;
+        }
+        else if(!s1.empty()){
+            area =h[a]*(i-s1.top()-1);
+        }
+        if (area>max_area) max_area = area;
+    }
+    return max_area;
+}
