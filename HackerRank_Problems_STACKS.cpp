@@ -221,3 +221,39 @@ long largestRectangle(vector<int> h) {
     }
     return max_area;
 }
+// ------------------------------------------------------------------------------------------------------------------
+// Problem 7: Simple Text Editor
+// Correct Solution
+int main(){
+    int q;
+    cin >> q;
+    stack<string> st;
+    string s="";
+    int type[]={1,2,3,4};
+    for(int i=0;i<q){
+        int qtype;
+        cin >> q=type;
+        if(qtype==type[0]){
+            string str;
+            cin >> str;
+            st.push(s);
+            s+=str;
+        }
+        else if(qtype==type[1]){
+            int k;
+            cin >> k;
+            st.push(s);
+            s.erase(s.size()-k);
+        }
+        else if(qtype==type[2]){
+            int k;
+            cin >> k;
+            cout << s[k-1] << endl;
+        }
+        else{
+            s=st.top();
+            st.pop();
+        }
+    }
+}
+
